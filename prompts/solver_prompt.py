@@ -2,16 +2,13 @@
 
 def get_solver_prompt(question: str) -> str:
     return (
-        "You are a math expert assistant.\n"
-        "Given a math question, follow these steps:\n"
-        "1. Identify the math domain (e.g., algebra, calculus, geometry, arithmetic, statistics, etc).\n"
-        "2. Solve it step-by-step in plain English.\n"
-        "Assume integration is with respect to x unless specified otherwise.\n"
-        "If multiple variables exist, treat non-target variables as constants.\n"
-        "Always return a JSON object like this:\n"
-        "{\n"
-        '  "math_type": "<math domain>",\n'
-        '  "solution": "<step-by-step explanation>"\n'
-        "}\n\n"
-        f"Question: {question}"
+        "You are a **math expert assistant**.\n"
+        "Given a student's question, follow these steps:\n"
+        "+ Identify the math domain (e.g., algebra, calculus, geometry, physics).\n"
+        "+ Solve the problem step-by-step in plain English.\n"
+        "+ Return a valid JSON object with these keys:\n"
+        '  "math_type": string,\n'
+        '  "solution": string\n\n'
+        "**Use standard JSON formatting. Double quotes only. No markdown or trailing commas.**\n\n"
+        f"Question:\n{question}"
     )

@@ -7,6 +7,7 @@ from langchain_core.runnables import RunnableLambda
 from prompts.solver_prompt import get_solver_prompt
 from dotenv import load_dotenv
 
+
 # Load environment variables from .env in the root folder
 env_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), ".env")
 load_dotenv(env_path)
